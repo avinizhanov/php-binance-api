@@ -782,6 +782,19 @@ class API
     }
 
     /**
+     * @param string $symbol
+     * @return array
+     * @throws \Exception
+     */
+    public function getTrades(string $symbol)
+    {
+        return $this->httpRequest("v1/trades", "GET", [
+            "symbol" => $symbol,
+            'limit' => 1000
+        ]);
+    }
+
+    /**
      * depth get Market depth
      *
      * $depth = $api->depth("ETHBTC");
