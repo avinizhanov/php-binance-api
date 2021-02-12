@@ -777,6 +777,7 @@ class API
     {
         return $this->tradesData($this->httpRequest("v1/aggTrades", "GET", [
             "symbol" => $symbol,
+            'limit' => 1000
         ]));
     }
 
